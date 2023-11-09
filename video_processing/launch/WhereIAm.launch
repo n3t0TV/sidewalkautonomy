@@ -1,0 +1,8 @@
+<launch>
+  <arg name="settings_file"
+   value="$(find video_processing)/config/whereiam_node.json" />
+
+  <node name="WhereIAm" pkg="video_processing" type="whereiam_node"
+   args="$(arg settings_file)"
+   output="screen" />
+</launch>

@@ -1,0 +1,10 @@
+<launch>
+  <arg name="settings_file"
+   value="$(find video_processing)/config/vm_analytics_node.json" />
+
+  <node name="VMAnalytics" pkg="video_processing" type="vm_analytics_node" args="$(arg settings_file)" output="screen"> 
+   <param name="~log_level" value="1" />
+	</node>
+
+
+</launch>

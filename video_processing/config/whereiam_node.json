@@ -1,0 +1,43 @@
+{
+    "video_source": "/dev/video11",
+    "skip_frames": 0,
+    "models": [
+        {
+            "path": "/home/jetson/ML_MODELS/WhereIAm160_V1.onnx",
+            "type": "classification",
+            "name": "WhereIam",
+            "framework": "ONNX",
+            "input_w": 160,
+            "input_h": 120,
+            "mc1": 127.0,
+            "mc2": 127.0,
+            "mc3": 127.0,
+            "scale": 0.0078125,
+            "swap_ch": true,
+            "backend": "TRT",
+            "target": "GPU",
+            "labels": [
+                "Cruces",
+                "Road",
+                "Sidewalk"
+            ],
+            "ncls": 3,
+            "nrecents": 10
+        },
+        {
+            "path": "/home/jetson/ML_MODELS/SidewalkDirResnet18_SIGMOID277.onnx",
+            "type": "regression",
+            "name": "SidewalkDir",
+            "framework": "ONNX",
+            "input_w": 160,
+            "input_h": 120,
+            "mc1": 127.0,
+            "mc2": 127.0,
+            "mc3": 127.0,
+            "scale": 0.0078125,
+            "swap_ch": true,
+            "backend": "TRT",
+            "target": "GPU"
+        }
+    ]
+}
